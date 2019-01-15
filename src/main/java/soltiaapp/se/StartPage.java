@@ -9,13 +9,13 @@ public class StartPage extends IPageChrome {
 	public StartPage(int defaultwait) {
 		   super(defaultwait);
 		   // TODO Auto-generated constructor stub
-		   driver.get("http://10.46.197.43/soltiaapp.se");
+		   driver.get("http://teltecstaging.nu/soltiaapp.se");
 	}
 
 
 	
 	public void loadpage(){
-		   driver.get("http://10.46.197.43/soltiaapp.se");
+		   driver.get("http://teltecstaging.nu/soltiaapp.se");
 	}
 	
  public boolean findInputByIdandsendkeys(String id,String keys){
