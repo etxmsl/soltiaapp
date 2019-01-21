@@ -17,8 +17,9 @@ public class IPageChrome {
 	    ChromeOptions chromeOptions = new ChromeOptions();
 	    //chromeOptions.setBinary("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary");
 	    chromeOptions.addArguments("--headless");
+	    chromeOptions.addArguments("window-size=1500x720");
 
-		System.setProperty("webdriver.chrome.driver", "/home/martin/Selenium/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		if (driver == null){
 		 driver=new ChromeDriver(chromeOptions);
 		}
@@ -26,7 +27,11 @@ public class IPageChrome {
 	}
 
 	public static void startDriver(){
-		System.setProperty("webdriver.chrome.driver", "/home/martin/Selenium/chromedriver");
+	    ChromeOptions chromeOptions = new ChromeOptions();
+	    //chromeOptions.setBinary("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary");
+	    chromeOptions.addArguments("--headless");
+	    chromeOptions.addArguments("window-size=1500x720");
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		driver=new ChromeDriver();
 	}
     public static void killDriver(){
