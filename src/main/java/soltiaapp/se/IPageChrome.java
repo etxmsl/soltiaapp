@@ -1,6 +1,7 @@
 package soltiaapp.se;
 
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,9 +14,13 @@ public class IPageChrome {
 	WebDriverWait wait;
 	
 	public IPageChrome(int defaultwait){
+	    ChromeOptions chromeOptions = new ChromeOptions();
+	    //chromeOptions.setBinary("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary");
+	    chromeOptions.addArguments("--headless");
+
 		System.setProperty("webdriver.chrome.driver", "/home/martin/Selenium/chromedriver");
 		if (driver == null){
-		 driver=new ChromeDriver();
+		 driver=new ChromeDriver(chromeOptions);
 		}
 		wait = new WebDriverWait(driver, defaultwait);
 	}
