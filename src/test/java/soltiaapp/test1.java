@@ -17,7 +17,7 @@ public class test1 {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		  
+		   IPageChrome.startDriver();  	  
 	}
 
 	@AfterClass
@@ -39,6 +39,7 @@ public class test1 {
 	@After
 	public void reloadpage(){
 		   soltiaapp.loadpage();
+		   IPageChrome.killDriver();
 	}
 	
 	@Test
