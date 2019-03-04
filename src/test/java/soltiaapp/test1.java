@@ -6,27 +6,44 @@ import soltiaapp.se.IPageChrome;
 import soltiaapp.se.StartPage;
 
 public class test1 {
+	
 	StartPage soltiaapp = new StartPage(15);
 
 	@BeforeAll
-	public static void setUpBeforeClass(StartPage soltiaapp) throws Exception {
+	public static void setUpBeforeClass() throws Exception {
 		IPageChrome.startDriver();
-		boolean loaded = soltiaapp.waitForVisabilitybyid("menu-item-448");
+/*		boolean loaded = soltiaapp.waitForVisabilitybyid("menu-item-448");
 		if (loaded) {
 			boolean app1 = soltiaapp.findElementByidandclick("menu-item-448");
 			if (app1) {
 				soltiaapp.waitForVisabilitybyid("psw");
 			}
 		}
-
+*/
 	}
+	
+
 
 	@AfterAll
-	public static void tearDownAfterClass(StartPage soltiaapp) throws Exception {
-		soltiaapp.loadpage();
+	public static void tearDownAfterClass() throws Exception {
 		IPageChrome.killDriver();
 	}
+	
+	@BeforeEach
+	public void app1loaded() {
+	    boolean loaded = soltiaapp.waitForVisabilitybyid("menu-item-448");
+		if (loaded) {
+			boolean app1 = soltiaapp.findElementByidandclick("menu-item-448");
+			if (app1) {
+				soltiaapp.waitForVisabilitybyid("psw");
+			}
+		}	
+	}
 
+	@AfterEach
+	public void reloadpage() {
+		soltiaapp.loadpage();
+	}
 	/*
 	 * @Before public void app1loaded() { boolean loaded =
 	 * soltiaapp.waitForVisabilitybyid("menu-item-448"); if (loaded) { boolean app1

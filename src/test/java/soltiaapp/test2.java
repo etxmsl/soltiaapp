@@ -8,22 +8,29 @@ public class test2 {
 	StartPage soltiaapp = new StartPage(15);
 
 	@BeforeAll
-	public static void setUpBeforeClass(StartPage soltiaapp) throws Exception {
+	public static void setUpBeforeClass() throws Exception {
 		IPageChrome.startDriver();
-		boolean loaded = soltiaapp.waitForVisabilitybyid("menu-item-448");
+	}
+
+	@AfterAll
+	public static void tearDownAfterClass() throws Exception {
+		IPageChrome.killDriver();
+	}
+
+	@BeforeEach
+	public void app1loaded() {
+	    boolean loaded = soltiaapp.waitForVisabilitybyid("menu-item-448");
 		if (loaded) {
 			boolean app1 = soltiaapp.findElementByidandclick("menu-item-448");
 			if (app1) {
 				soltiaapp.waitForVisabilitybyid("psw");
 			}
-		}
-
+		}	
 	}
 
-	@AfterAll
-	public static void tearDownAfterClass(StartPage soltiaapp) throws Exception {
+	@AfterEach
+	public void reloadpage() {
 		soltiaapp.loadpage();
-		IPageChrome.killDriver();
 	}
 
 	/*

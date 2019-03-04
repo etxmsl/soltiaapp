@@ -5,9 +5,17 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Soltiaapp</name>
   <description>Soltia Administration App</description>
+  <build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.0</version>
+        </plugin>
+    </plugins>
+   </build>
    <dependencies>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>Id>
+        <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
         <version>5.3.2</version>
         <scope>test</scope>

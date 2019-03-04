@@ -35,9 +35,9 @@ public class IPageChrome {
 		driver=new ChromeDriver();
 	}
     public static void killDriver(){
-    	if(driver != null){
+    	//if(driver != null){
     		driver.close();
-    	}
+    	//}
     	    	
     }
     
