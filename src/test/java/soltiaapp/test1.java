@@ -9,6 +9,7 @@ import soltiaapp.se.StartPage;
 public class test1 {
 	
 	StartPage soltiaapp = new StartPage(15);
+	
 	protected static WebDriver driver2; 
 
 	@BeforeAll
