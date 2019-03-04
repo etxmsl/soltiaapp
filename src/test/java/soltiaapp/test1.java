@@ -71,6 +71,12 @@ public class test1 {
 			if (register) {
 				boolean rule = soltiaapp.waitForVisabilitybyid("rule");
 				if (rule) {
+					try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					regcompany = soltiaapp.findElementByidandclick("menu-item-451");
 				}
 			}
@@ -100,6 +106,12 @@ public class test1 {
 			if (register) {
 				boolean rule = soltiaapp.waitForVisabilitybyxpath("//input[@value='Soltia']");
 				if (rule) {
+					try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					regsoltia = soltiaapp.findElementByidandclick("menu-item-451");
 				}
 			}
@@ -130,6 +142,12 @@ public class test1 {
 					boolean scansloaded = soltiaapp.waitForVisabilitybyid("scans");
 					boolean economysystemsloaded = soltiaapp.waitForVisabilitybyid("economysystems");
 					if (scansloaded && economysystemsloaded) {
+						try {
+							Thread.sleep(5000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						addusercompany = soltiaapp.findElementByidandclick("menu-item-451");
 					}
 				}
@@ -159,6 +177,12 @@ public class test1 {
 					boolean scansloaded = soltiaapp.waitForVisabilitybyid("scans");
 					boolean economysystemsloaded = soltiaapp.waitForVisabilitybyid("economysystems");
 					if (scansloaded && economysystemsloaded) {
+						try {
+							Thread.sleep(5000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						addusersoltia = soltiaapp.findElementByidandclick("menu-item-451");
 					}
 				}

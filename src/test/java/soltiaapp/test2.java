@@ -53,6 +53,12 @@ public class test2 {
 		if (login) {
 			boolean scansloaded = soltiaapp.waitForVisabilitybyid("scans");
 			boolean economysystemsloaded = soltiaapp.waitForVisabilitybyid("economysystems");
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if (scansloaded && economysystemsloaded) {
 				userloggedin = soltiaapp.findElementByidandclick("menu-item-451");
 			}
