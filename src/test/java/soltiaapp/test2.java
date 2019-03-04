@@ -1,20 +1,23 @@
 package soltiaapp;
 
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.WebDriver;
+
 import soltiaapp.se.IPageChrome;
 import soltiaapp.se.StartPage;
 
 public class test2 {
 	StartPage soltiaapp = new StartPage(15);
+	protected static WebDriver driver2; 
 
 	@BeforeAll
 	public static void setUpBeforeClass() throws Exception {
-		IPageChrome.startDriver();
+		driver2=IPageChrome.startDriver();
 	}
 
 	@AfterAll
 	public static void tearDownAfterClass() throws Exception {
-		IPageChrome.killDriver();
+		IPageChrome.killDriver(driver2);
 	}
 
 	@BeforeEach

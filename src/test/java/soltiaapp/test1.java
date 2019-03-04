@@ -1,6 +1,7 @@
 package soltiaapp;
 
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.WebDriver;
 
 import soltiaapp.se.IPageChrome;
 import soltiaapp.se.StartPage;
@@ -8,25 +9,18 @@ import soltiaapp.se.StartPage;
 public class test1 {
 	
 	StartPage soltiaapp = new StartPage(15);
+	protected static WebDriver driver2; 
 
 	@BeforeAll
 	public static void setUpBeforeClass() throws Exception {
-		IPageChrome.startDriver();
-/*		boolean loaded = soltiaapp.waitForVisabilitybyid("menu-item-448");
-		if (loaded) {
-			boolean app1 = soltiaapp.findElementByidandclick("menu-item-448");
-			if (app1) {
-				soltiaapp.waitForVisabilitybyid("psw");
-			}
-		}
-*/
+		driver2=IPageChrome.startDriver();
 	}
 	
 
 
 	@AfterAll
 	public static void tearDownAfterClass() throws Exception {
-		IPageChrome.killDriver();
+		IPageChrome.killDriver(driver2);
 	}
 	
 	@BeforeEach

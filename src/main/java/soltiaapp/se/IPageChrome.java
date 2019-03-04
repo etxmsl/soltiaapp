@@ -26,18 +26,18 @@ public class IPageChrome {
 		wait = new WebDriverWait(driver, defaultwait);
 	}
 
-	public static void startDriver(){
+	public static WebDriver startDriver(){
 	    ChromeOptions chromeOptions = new ChromeOptions();
 	    //chromeOptions.setBinary("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary");
 	    chromeOptions.addArguments("--headless");
 	    chromeOptions.addArguments("window-size=1500x720");
 		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		driver=new ChromeDriver();
+		return driver;
 	}
-    public static void killDriver(){
-    	//if(driver != null){
-    		driver.close();
-    	//}
+    public static void killDriver(WebDriver driv){
+    		driv.close();
+    		driv.quit();
     	    	
     }
     
